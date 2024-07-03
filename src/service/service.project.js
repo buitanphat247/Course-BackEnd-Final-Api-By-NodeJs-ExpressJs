@@ -12,7 +12,7 @@ const get_all_project = async () => {
     return {
       error: true,
       data: null,
-      message: "Get all project failed",
+      message: "Get all project failed " + error,
     };
   }
 };
@@ -30,7 +30,7 @@ const get_project_by_id = async (id) => {
     return {
       error: false,
       data,
-      message: "Get project by id failed",
+      message: "Get project by id failed " + error,
     };
   }
 };
@@ -47,7 +47,7 @@ const create_project = async (data) => {
     return {
       error: true,
       data: null,
-      message: "Create project failed",
+      message: "Create project failed " + error,
     };
   }
 };
@@ -77,9 +77,13 @@ const add_user_to_project = async (data) => {
     return {
       error: true,
       data: null,
-      message: "Add user to project failed",
+      message: "Add user to project failed " + error,
     };
   }
+};
+
+const add_task_to_project = async (data) => {
+  return false;
 };
 
 const delete_project_by_id = async (id_project) => {
@@ -97,7 +101,7 @@ const delete_project_by_id = async (id_project) => {
     return {
       error: true,
       data: null,
-      message: "Delete project by id failed",
+      message: "Delete project by id failed " + error,
     };
   }
 };
@@ -116,7 +120,7 @@ const delete_user_by_id_form_project = async (id_user, id_project) => {
     return {
       error: true,
       data: null,
-      message: "Delete user by id from project failed",
+      message: "Delete user by id from project failed " + error,
     };
   }
 };
@@ -159,7 +163,7 @@ const undelete_project_by_id = async (id_project) => {
     return {
       error: true,
       data: null,
-      message: "Undelete project by id failed",
+      message: "Undelete project by id failed " + error,
     };
   }
 };
@@ -173,4 +177,5 @@ module.exports = {
   delete_project_by_id,
   delete_multiple_user_by_id_form_project,
   undelete_project_by_id,
+  add_task_to_project,
 };

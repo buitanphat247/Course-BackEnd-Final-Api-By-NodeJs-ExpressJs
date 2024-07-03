@@ -20,6 +20,7 @@ const {
   delete_project,
   undelete_project,
 } = require("../controller/project");
+const { post_task, get_task, delete_task, undelete_task } = require("../controller/task");
 
 const router = express.Router();
 
@@ -41,5 +42,10 @@ router.get("/project", get_project);
 router.post("/project", post_project);
 router.delete("/project", delete_project);
 router.delete("/undelete_project", undelete_project);
+
+router.get("/task", get_task);
+router.post("/task", post_task);
+router.delete("/task", delete_task);
+router.delete("/undelete_task", undelete_task);
 
 module.exports = router;
